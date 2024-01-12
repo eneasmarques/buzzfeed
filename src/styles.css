@@ -3,5 +3,17 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
-  color: #faebd7;
+  color: #000080;
+
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  background-color: #faebd7;
+}
+
+@media screen and (max-width: 756px) {
+  html {
+    font-size: 60%;
+  }
 }
