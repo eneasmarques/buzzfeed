@@ -1,19 +1,20 @@
 <section class="quizz__container">
   <div class="quizz__logo">
     <img src="assets/imgs/logo.png" alt="" />
-    <h1>Título</h1>
+    <h1>{{ title }}</h1>
   </div>
   <div class="quizz__questions">
-    <h2>Questão selecionada</h2>
+    <h2>{{ questionSeletcted.question }}</h2>
   </div>
   <div class="quizz__options">
-    <button class="btn-option">Opção</button>
-    <button class="btn-option">Opção</button>
-    <button class="btn-option">Opção</button>
-    <button class="btn-option">Opção</button>
-    <button class="btn-option">Opção</button>
+    <button
+      class="btn-option"
+      *ngFor="let option of questionSeletcted.options; let i = index"
+    >
+      {{ option.name }}
+    </button>
   </div>
-  <div class="quizz__results">
+  <div *ngIf="finished" class="quizz__results">
     <h3>O seu resultado é:</h3>
     <p>Resultado</p>
   </div>
