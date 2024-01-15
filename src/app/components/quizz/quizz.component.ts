@@ -45,13 +45,34 @@ export class QuizzComponent implements OnInit {
     this.nextQuestion();
   }
 
-  nextQuestion() {
+  async nextQuestion() {
     this.questionIndex += 1;
 
     this.finished = !(this.questionMaxIndex > this.questionIndex);
 
     if (!this.finished) {
       this.questionSeletcted = this.questions[this.questionIndex];
+    } else {
+      const finalAnswer = await this.checkResult(this.answers);
+
+      this.answersSelected =
+        quizz_questions.results[
+          finalAnswer as keyof typeof quizz_questions.results
+        ];
     }
+  }
+
+  async checkResult(answers: string[]) {
+    const result = answers.reduce((previous, current, i, arr) => {
+      if (
+        arr.filter((item) => item === previous).length >
+        arr.filter((item) => item === current).length
+      ) {
+        return previous;
+      }
+      return current;
+    });
+
+    return result;
   }
 }
