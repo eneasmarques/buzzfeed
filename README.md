@@ -32,4 +32,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 O projeto também está disponível em uma página do GitHub:
 
-[Online Page](https://eneasmarques.github.io/buzz)
+[Online Page](https://eneasmarques.github.io/buzzfeed)
